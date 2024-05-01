@@ -1,0 +1,24 @@
+name: mcinfo_app
+description: "Display some helpful information from Minecraft APIs"
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.3 <4.0.0'
+
+dependencies:
+  adwaita: ^1.1.0
+  flutter:
+    sdk: flutter
+  gradient_icon: ^2.0.9
+  http_requests: ^3.2.0
+  ionicons: ^0.2.2
+  provider: ^6.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
