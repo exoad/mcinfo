@@ -8,8 +8,11 @@ environment:
 
 dependencies:
   adwaita: ^1.1.0
+  dart_minecraft: ^0.3.4
   flutter:
     sdk: flutter
+  flutter_staggered_grid_view: ^0.7.0
+  glowstone: ^0.0.2
   gradient_icon: ^2.0.9
   http_requests: ^3.2.0
   ionicons: ^0.2.2

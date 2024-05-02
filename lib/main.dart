@@ -2,7 +2,6 @@ import 'package:adwaita/adwaita.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:mcinfo_app/bits.dart';
-import 'package:mcinfo_app/shared.dart';
 import 'package:mcinfo_app/view_about.dart';
 import 'package:mcinfo_app/view_history.dart';
 import 'package:mcinfo_app/view_players.dart';
@@ -11,15 +10,14 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await MinersAvatarApi.fetch(
-      url: MinersAvatarApi.flatAvatar, username: "exoad");
-
   runApp(MultiProvider(providers: <ChangeNotifierProvider<dynamic>>[
     ChangeNotifierProvider<AppNavbarSelectedIndexProvider>(
       create: (_) => AppNavbarSelectedIndexProvider(),
     ),
     ChangeNotifierProvider<AppThemeModeProvider>(
-        create: (_) => AppThemeModeProvider())
+        create: (_) => AppThemeModeProvider()),
+    ChangeNotifierProvider<EphemeralPlayerSearchProvider>(
+        create: (_) => EphemeralPlayerSearchProvider())
   ], child: const AppEntryRoot()));
 }
 

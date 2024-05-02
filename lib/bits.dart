@@ -21,3 +21,14 @@ class AppThemeModeProvider extends ChangeNotifier {
     notifyListeners();
   }
 }
+
+class EphemeralPlayerSearchProvider extends ChangeNotifier {
+  String _searchQuery = "";
+
+  String get searchQuery => _searchQuery;
+
+  set searchQuery(String query) {
+    _searchQuery = query;
+    notifyListeners();
+  }
+}
