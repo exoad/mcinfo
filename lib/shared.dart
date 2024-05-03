@@ -4,6 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http_requests/http_requests.dart';
 
+const int mcinfo_build_version = 1;
+
 typedef MinersAvatarApiResponse = ({
   Image? flatAvatar,
   Image? helmAvatar,
