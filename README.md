@@ -1,6 +1,6 @@
 # McInfo
 
-A simple UI to search up information regarding Minecraft players and servers.
+A simple UI to search for information regarding Minecraft players and servers.
 
 
 ## Demo
