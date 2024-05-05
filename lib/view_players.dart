@@ -33,6 +33,9 @@ class _PlayerSearchMainViewState extends State<PlayerSearchMainView>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    _controller.text =
+        Provider.of<EphemeralPlayerSearchProvider>(context)
+            .searchQuery;
     return Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

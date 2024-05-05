@@ -1,8 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:http_requests/http_requests.dart';
+import 'package:http/http.dart' as http;
 
 const int mcinfo_build_version = 1;
 
@@ -34,46 +32,49 @@ final class MinersAvatarApi {
 
   static Future<MinersAvatarApiResponse> fetch(
       String username) async {
-    HttpResponse flatAvatarRes =
-        await HttpRequests.get(flatAvatar + _urlFormalizer(username));
-    HttpResponse helmAvatarRes =
-        await HttpRequests.get(helmAvatar + _urlFormalizer(username));
-    HttpResponse isometricAvatarRes = await HttpRequests.get(
-        isometricAvatar + _urlFormalizer(username));
-    HttpResponse flatFrontBodyRes = await HttpRequests.get(
-        flatFrontBody + _urlFormalizer(username));
-    HttpResponse helmFrontBodyRes = await HttpRequests.get(
-        helmFrontBody + _urlFormalizer(username));
-    HttpResponse flatBustRes =
-        await HttpRequests.get(flatBust + _urlFormalizer(username));
-    HttpResponse helmBustRes =
-        await HttpRequests.get(helmBust + _urlFormalizer(username));
-    HttpResponse userSkinRes =
-        await HttpRequests.get(userSkin + _urlFormalizer(username));
+    http.Response flatAvatarRes = await http
+        .get(Uri.https(flatAvatar + _urlFormalizer(username)));
+    http.Response helmAvatarRes = await http
+        .get(Uri.https(helmAvatar + _urlFormalizer(username)));
+    http.Response isometricAvatarRes = await http
+        .get(Uri.https(isometricAvatar + _urlFormalizer(username)));
+    http.Response flatFrontBodyRes = await http
+        .get(Uri.https(flatFrontBody + _urlFormalizer(username)));
+    http.Response helmFrontBodyRes = await http
+        .get(Uri.https(helmFrontBody + _urlFormalizer(username)));
+    http.Response flatBustRes = await http
+        .get(Uri.https(flatBust + _urlFormalizer(username)));
+    http.Response helmBustRes = await http
+        .get(Uri.https(helmBust + _urlFormalizer(username)));
+    http.Response userSkinRes = await http
+        .get(Uri.https(userSkin + _urlFormalizer(username)));
     return (
-      flatAvatar: flatFrontBodyRes.statusCode == HttpStatus.ok
-          ? Image.memory(Uint8List.fromList(flatAvatarRes.bytes))
+      flatAvatar: flatFrontBodyRes.statusCode == 200
+          ? Image.memory(Uint8List.fromList(flatAvatarRes.bodyBytes))
           : null,
-      helmAvatar: helmAvatarRes.statusCode == HttpStatus.ok
-          ? Image.memory(Uint8List.fromList(helmAvatarRes.bytes))
+      helmAvatar: helmAvatarRes.statusCode == 200
+          ? Image.memory(Uint8List.fromList(helmAvatarRes.bodyBytes))
           : null,
-      isometricAvatar: isometricAvatarRes.statusCode == HttpStatus.ok
-          ? Image.memory(Uint8List.fromList(isometricAvatarRes.bytes))
+      isometricAvatar: isometricAvatarRes.statusCode == 200
+          ? Image.memory(
+              Uint8List.fromList(isometricAvatarRes.bodyBytes))
           : null,
-      flatFrontBody: flatFrontBodyRes.statusCode == HttpStatus.ok
-          ? Image.memory(Uint8List.fromList(flatFrontBodyRes.bytes))
+      flatFrontBody: flatFrontBodyRes.statusCode == 200
+          ? Image.memory(
+              Uint8List.fromList(flatFrontBodyRes.bodyBytes))
           : null,
-      helmFrontBody: helmFrontBodyRes.statusCode == HttpStatus.ok
-          ? Image.memory(Uint8List.fromList(helmFrontBodyRes.bytes))
+      helmFrontBody: helmFrontBodyRes.statusCode == 200
+          ? Image.memory(
+              Uint8List.fromList(helmFrontBodyRes.bodyBytes))
           : null,
-      flatBust: flatBustRes.statusCode == HttpStatus.ok
-          ? Image.memory(Uint8List.fromList(flatBustRes.bytes))
+      flatBust: flatBustRes.statusCode == 200
+          ? Image.memory(Uint8List.fromList(flatBustRes.bodyBytes))
           : null,
-      helmBust: helmBustRes.statusCode == HttpStatus.ok
-          ? Image.memory(Uint8List.fromList(helmBustRes.bytes))
+      helmBust: helmBustRes.statusCode == 200
+          ? Image.memory(Uint8List.fromList(helmBustRes.bodyBytes))
           : null,
-      userSkin: userSkinRes.statusCode == HttpStatus.ok
-          ? Image.memory(Uint8List.fromList(userSkinRes.bytes))
+      userSkin: userSkinRes.statusCode == 200
+          ? Image.memory(Uint8List.fromList(userSkinRes.bodyBytes))
           : null,
     );
   }

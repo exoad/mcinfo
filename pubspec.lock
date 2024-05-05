@@ -61,10 +61,10 @@ packages:
     dependency: "direct main"
     description:
       name: dart_minecraft
-      sha256: f2c1bf3919aae74de969ee0bf72fdc64b554a263acfb56d16d0000102e45be61
+      sha256: "8bc266190940a01cd55631fd422edf638216a70916d83342d1192f79cee9338d"
       url: "https://pub.dev"
     source: hosted
-    version: "0.3.4"
+    version: "0.5.2"
   dio:
     dependency: transitive
     description:
@@ -128,30 +128,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  glowstone:
-    dependency: "direct main"
-    description:
-      name: glowstone
-      sha256: e2859994c3debb0983a2e956a729c0017fd94bd1c43ae3aad1dcd8ea725bb447
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.2"
-  gradient_icon:
-    dependency: "direct main"
-    description:
-      name: gradient_icon
-      sha256: "5852c1f44825e49d479c91602b5e9e17a4fbc49af69ac314b1f906b0c62c6193"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.9"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
-      sha256: "761a297c042deedc1ffbb156d6e2af13886bb305c2a343a4d972504cd67dd938"
+      sha256: "5895291c13fa8a3bd82e76d5627f69e0d85ca6a30dcac95c4ea19a5d555879c2"
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.1"
+    version: "0.13.6"
   http_parser:
     dependency: transitive
     description:
@@ -160,14 +144,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
-  http_requests:
-    dependency: "direct main"
-    description:
-      name: http_requests
-      sha256: a7b4e5825b22a7598d70db9d203f1ca1b8750379580ec54a8cff68375d132574
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.2.0"
   ionicons:
     dependency: "direct main"
     description:
@@ -176,6 +152,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.2"
+  jwt_decoder:
+    dependency: transitive
+    description:
+      name: jwt_decoder
+      sha256: "54774aebf83f2923b99e6416b4ea915d47af3bde56884eb622de85feabbc559f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
   leak_tracker:
     dependency: transitive
     description:
