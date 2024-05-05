@@ -18,7 +18,7 @@ typedef MinersAvatarApiResponse = ({
 final class MinersAvatarApi {
   MinersAvatarApi._();
 
-  static const String baseUrl = "https://minotar.net";
+  static const String baseUrl = "minotar.net";
   static const String flatAvatar = "$baseUrl/avatar";
   static const String helmAvatar = "$baseUrl/helm";
   static const String isometricAvatar = "$baseUrl/cube";
@@ -32,6 +32,7 @@ final class MinersAvatarApi {
 
   static Future<MinersAvatarApiResponse> fetch(
       String username) async {
+    print("fetching items from miners-avatar-api...");
     http.Response flatAvatarRes = await http
         .get(Uri.https(flatAvatar + _urlFormalizer(username)));
     http.Response helmAvatarRes = await http
@@ -48,6 +49,7 @@ final class MinersAvatarApi {
         .get(Uri.https(helmBust + _urlFormalizer(username)));
     http.Response userSkinRes = await http
         .get(Uri.https(userSkin + _urlFormalizer(username)));
+    print("returning payload for miners-avatar-api!");
     return (
       flatAvatar: flatFrontBodyRes.statusCode == 200
           ? Image.memory(Uint8List.fromList(flatAvatarRes.bodyBytes))
